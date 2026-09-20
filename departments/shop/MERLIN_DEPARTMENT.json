@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "generated_by": "merlin",
+  "generated_at": "2026-09-20T15:27:23Z",
+  "fabric_version": "v58.0.0",
+  "landing_zone_fingerprint": "70fa4b3a789da531900fc0a8451cee74288f23897772507f61e849917fa4b23f",
+  "code": "shop",
+  "name": "Storefront & Customer",
+  "prefix": "vd",
+  "primary_region": "europe-west4",
+  "environments": [
+    {
+      "short_code": "dev",
+      "name": "Development",
+      "is_production": false
+    },
+    {
+      "short_code": "stg",
+      "name": "Staging",
+      "is_production": false
+    },
+    {
+      "short_code": "prd",
+      "name": "Production",
+      "is_production": true
+    }
+  ],
+  "core_project": "shop-core-0",
+  "projects": {
+    "dev": {
+      "app": "shop-app-dev-0",
+      "dp": "shop-dp-dev-0"
+    },
+    "stg": {
+      "app": "shop-app-stg-0",
+      "dp": "shop-dp-stg-0"
+    },
+    "prd": {
+      "app": "shop-app-prd-0",
+      "dp": "shop-dp-prd-0"
+    }
+  },
+  "subnets": {
+    "dev": {
+      "host_project": "vd-net-core-0",
+      "vpc": "vpc-shared-dev",
+      "name": "sb-shop-dev-europe-west4",
+      "region": "europe-west4",
+      "ip_cidr_range": "10.200.0.0/22"
+    },
+    "stg": {
+      "host_project": "vd-net-core-0",
+      "vpc": "vpc-shared-dev",
+      "name": "sb-shop-stg-europe-west4",
+      "region": "europe-west4",
+      "ip_cidr_range": "10.200.4.0/22"
+    },
+    "prd": {
+      "host_project": "vd-net-core-0",
+      "vpc": "vpc-shared-prod",
+      "name": "sb-shop-prd-europe-west4",
+      "region": "europe-west4",
+      "ip_cidr_range": "10.200.8.0/22"
+    }
+  },
+  "key_ring": {
+    "project": "vd-sec-core-0",
+    "name": "shop-kr-europe-west4",
+    "location": "europe-west4"
+  },
+  "deploy_identities": {
+    "dev": "iac-shop-dev@vd-shop-core-0.iam.gserviceaccount.com",
+    "stg": "iac-shop-stg@vd-shop-core-0.iam.gserviceaccount.com",
+    "prd": "iac-shop-prd@vd-shop-core-0.iam.gserviceaccount.com"
+  },
+  "state_bucket": "vd-shop-iac-state",
+  "edge_policies": {
+    "shop-app-dev-0": [
+      "compliance-waf-policy"
+    ],
+    "shop-app-stg-0": [
+      "compliance-waf-policy"
+    ],
+    "shop-app-prd-0": [
+      "compliance-waf-policy"
+    ]
+  },
+  "image_attestors": {},
+  "groups": {
+    "owners": "gcp-shop-owners@vendora.eu",
+    "developers": "gcp-shop-developers@vendora.eu",
+    "qa": "gcp-shop-qa@vendora.eu"
+  },
+  "platform_groups": {},
+  "facts": {
+    "create_groups": false,
+    "customer_id": "",
+    "subnet_cidrs": {
+      "dev": "10.200.0.0/22",
+      "stg": "10.200.4.0/22",
+      "prd": "10.200.8.0/22"
+    },
+    "budget_currency": "EUR",
+    "environment_folders": {
+      "dev": "folders/000000000101",
+      "stg": "folders/000000000102",
+      "prd": "folders/000000000103"
+    },
+    "access_policy": "",
+    "vpcs": {
+      "dev": "vpc-shared-dev",
+      "stg": "vpc-shared-dev",
+      "prd": "vpc-shared-prod"
+    },
+    "billing_account": "FAKE00-356D6C-FD4FEF",
+    "primary_region": "europe-west4",
+    "prefix": "vd",
+    "shared_services_folder": "folders/000000000001",
+    "network_projects": {
+      "dev": "vd-net-core-0",
+      "stg": "vd-net-core-0",
+      "prd": "vd-net-core-0"
+    },
+    "key_project": "vd-sec-core-0",
+    "perimeter": ""
+  }
+}

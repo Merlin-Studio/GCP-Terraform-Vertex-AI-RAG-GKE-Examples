@@ -1,0 +1,3 @@
+# Shell scripts must keep LF endings or bash refuses them on a Windows clone.
+*.sh   text eol=lf
+*.env  text eol=lf

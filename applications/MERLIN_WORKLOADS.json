@@ -1,0 +1,2329 @@
+{
+  "schema_version": 1,
+  "generated_by": "merlin",
+  "generated_at": "2026-09-20T15:28:47Z",
+  "job_id": "b23f6a7f-75f7-422f-9e46-e161c4112ec9",
+  "landing_zone_job_id": "c1c0cfb4-afd2-45a9-be67-35f18aa014b9",
+  "environments": [
+    "dev",
+    "stg",
+    "prd"
+  ],
+  "policy": {
+    "schema_version": 1,
+    "catalogue_version": 1,
+    "digest": "6c3d6599e6c2",
+    "rules": {
+      "catalogue:gke_workloads": {
+        "digest": "f5cf9c5eb35a",
+        "label": "GKE workloads",
+        "summary": "3-gke in gke, encrypted with the landing zone's key",
+        "parts": {}
+      },
+      "catalogue:bigquery_datasets": {
+        "digest": "056081ac944f",
+        "label": "BigQuery datasets",
+        "summary": "3-data-platform in dp, encrypted with the landing zone's key; removing one destroys data",
+        "parts": {}
+      },
+      "catalogue:gcs_buckets": {
+        "digest": "4b7c2cd6a31a",
+        "label": "Cloud Storage buckets",
+        "summary": "3-data-platform in dp, encrypted with the landing zone's key; removing one destroys data",
+        "parts": {}
+      },
+      "catalogue:cloud_sql_instances": {
+        "digest": "43efc42bfee6",
+        "label": "Cloud SQL instances",
+        "summary": "3-services in dp, encrypted with the landing zone's key; removing one destroys data",
+        "parts": {}
+      },
+      "catalogue:firestore_databases": {
+        "digest": "46ba2a29a1f5",
+        "label": "Firestore databases",
+        "summary": "3-services in dp, encrypted with the landing zone's key; removing one destroys data",
+        "parts": {}
+      },
+      "catalogue:pubsub_topics": {
+        "digest": "15b4a5ed7d1a",
+        "label": "Pub/Sub topics",
+        "summary": "3-data-platform in dp, encrypted with the landing zone's key; removing one destroys data",
+        "parts": {}
+      },
+      "catalogue:secret_manager_secrets": {
+        "digest": "e2eaf2e81f6c",
+        "label": "Secret Manager secrets",
+        "summary": "3-services in app, encrypted with the landing zone's key; removing one destroys data",
+        "parts": {}
+      },
+      "catalogue:dataflow_scaffolds": {
+        "digest": "4351d1c5fe04",
+        "label": "Dataflow scaffold",
+        "summary": "3-data-platform in dp, encrypted with the landing zone's key",
+        "parts": {}
+      },
+      "catalogue:cloud_run_services": {
+        "digest": "94c269d9b9e1",
+        "label": "Cloud Run services",
+        "summary": "3-services in app, encrypted with the landing zone's key",
+        "parts": {}
+      },
+      "catalogue:cloud_functions": {
+        "digest": "f6191128252b",
+        "label": "Cloud Functions",
+        "summary": "3-services in app",
+        "parts": {}
+      },
+      "catalogue:compute_instances": {
+        "digest": "ad414531bc34",
+        "label": "Compute Engine VMs",
+        "summary": "3-services in compute, encrypted with the landing zone's key; removing one destroys data",
+        "parts": {}
+      },
+      "catalogue:bastion_hosts": {
+        "digest": "593b9406d0ec",
+        "label": "Bastion hosts (IAP)",
+        "summary": "3-services in compute, encrypted with the landing zone's key",
+        "parts": {}
+      },
+      "catalogue:artifact_registry_repos": {
+        "digest": "c0eb7c5b8257",
+        "label": "Artifact Registry repositories",
+        "summary": "3-artifact-registry in the shared project, encrypted with the landing zone's key; removing one destroys data",
+        "parts": {}
+      },
+      "compliance:cis": {
+        "digest": "155eafd4edb4",
+        "label": "CIS Benchmarks",
+        "summary": "5 setting(s) across 3 page(s), 5 organization policy(ies)",
+        "parts": {
+          "04_networking": "6e157886d4b4",
+          "06_security_baseline": "d18ae940880c",
+          "07_advanced_security": "fb2bbe04bbf1",
+          "organization_policies": "cd87b9e88e3e"
+        }
+      },
+      "compliance:eucs": {
+        "digest": "15c82080ea82",
+        "label": "EUCS",
+        "summary": "9 setting(s) across 2 page(s)",
+        "parts": {
+          "06_security_baseline": "bba488f3b2f4",
+          "15_application_services": "22ad972a15cb"
+        }
+      },
+      "compliance:fedramp": {
+        "digest": "0a5e099d5a09",
+        "label": "FedRAMP",
+        "summary": "44 setting(s) across 6 page(s), 2 organization policy(ies)",
+        "parts": {
+          "03_iam_model": "d7d81e2d1cc9",
+          "04_networking": "bccf62551ce0",
+          "06_security_baseline": "6f247050388f",
+          "07_advanced_security": "395d224079b9",
+          "15_application_services": "b459fc8bd2ba",
+          "17_compute_engine": "e1da0bd50bba",
+          "organization_policies": "2820612c99b0"
+        }
+      },
+      "compliance:gdpr": {
+        "digest": "17b57ed94bed",
+        "label": "GDPR",
+        "summary": "17 setting(s) across 5 page(s)",
+        "parts": {
+          "03_iam_model": "cb0f173ee0a9",
+          "06_security_baseline": "4a35161ed91c",
+          "07_advanced_security": "f984980f93d0",
+          "08_logging_monitoring": "f2ce12b2e148",
+          "15_application_services": "23d9f053159c"
+        }
+      },
+      "compliance:hipaa": {
+        "digest": "bac813200b45",
+        "label": "HIPAA",
+        "summary": "37 setting(s) across 5 page(s)",
+        "parts": {
+          "06_security_baseline": "318fbe9a84e0",
+          "07_advanced_security": "55fc8481a9dc",
+          "08_logging_monitoring": "9b9ad3382b25",
+          "15_application_services": "2b4b503598e1",
+          "17_compute_engine": "75c2c5141b7c"
+        }
+      },
+      "compliance:iso27001": {
+        "digest": "7a943c07c6d3",
+        "label": "ISO 27001",
+        "summary": "12 setting(s) across 5 page(s)",
+        "parts": {
+          "03_iam_model": "024a67dc4a27",
+          "06_security_baseline": "31b47982436f",
+          "07_advanced_security": "7457471f3b0c",
+          "08_logging_monitoring": "3b96249357c2",
+          "15_application_services": "09a3a97971b7"
+        }
+      },
+      "compliance:nis2": {
+        "digest": "0256affed239",
+        "label": "NIS2",
+        "summary": "16 setting(s) across 4 page(s)",
+        "parts": {
+          "03_iam_model": "59514c24dea9",
+          "06_security_baseline": "10df040d9b5b",
+          "07_advanced_security": "76adde8b9d8a",
+          "08_logging_monitoring": "3672b9fa1591"
+        }
+      },
+      "compliance:nist_800_53": {
+        "digest": "0a5e099d5a09",
+        "label": "NIST 800-53",
+        "summary": "44 setting(s) across 6 page(s), 2 organization policy(ies)",
+        "parts": {
+          "03_iam_model": "d7d81e2d1cc9",
+          "04_networking": "bccf62551ce0",
+          "06_security_baseline": "6f247050388f",
+          "07_advanced_security": "395d224079b9",
+          "15_application_services": "b459fc8bd2ba",
+          "17_compute_engine": "e1da0bd50bba",
+          "organization_policies": "2820612c99b0"
+        }
+      },
+      "compliance:pci_dss": {
+        "digest": "8af2183dab99",
+        "label": "PCI DSS",
+        "summary": "27 setting(s) across 5 page(s)",
+        "parts": {
+          "06_security_baseline": "0fef9b1f9ac7",
+          "07_advanced_security": "bb02209e36a6",
+          "08_logging_monitoring": "2b5ef292ec03",
+          "15_application_services": "efbdb16f2ed8",
+          "17_compute_engine": "6bf51ed6ffee"
+        }
+      },
+      "compliance:soc2": {
+        "digest": "b372f95baad5",
+        "label": "SOC 2",
+        "summary": "6 setting(s) across 3 page(s)",
+        "parts": {
+          "03_iam_model": "476493435b8c",
+          "06_security_baseline": "57232d401c2c",
+          "08_logging_monitoring": "954462ddfd7b"
+        }
+      },
+      "compliance:sox": {
+        "digest": "a0a948e8296c",
+        "label": "SOX",
+        "summary": "9 setting(s) across 4 page(s)",
+        "parts": {
+          "03_iam_model": "8a3729b44352",
+          "06_security_baseline": "f337683f4543",
+          "08_logging_monitoring": "38388b497251",
+          "15_application_services": "2ce79dc80745"
+        }
+      },
+      "network_separation": {
+        "digest": "98492fb1acd3",
+        "label": "Production network separation",
+        "summary": "production moves onto its own VPC for PCI DSS, SOC 2, SOX",
+        "parts": {
+          "pci_dss": "8ad93376d546",
+          "soc2": "cfe8caa1fcb5",
+          "sox": "e923d86a8ca7"
+        }
+      },
+      "cmek_rotation": {
+        "digest": "b755295d2243",
+        "label": "Key rotation",
+        "summary": "365 days by default; CIS Benchmarks 90",
+        "parts": {}
+      },
+      "capability:agent-runtime": {
+        "digest": "24a2f0cfb37f",
+        "label": "Capability: agent-runtime",
+        "summary": "10 setting(s), 5 forced by a control, 2 Merlin opinion(s)",
+        "parts": {
+          "worker_identity": "858a958ce5a7",
+          "customer_key": "2b9b79267304",
+          "region": "e4aa13dde0fe",
+          "public_endpoint": "0331f77ed47b",
+          "image": "7b250ee97120",
+          "max_instances": "87bb565ce0df",
+          "tracing": "18003630e26f",
+          "agent_code_and_prompts": "ac2c4c0c66e7",
+          "tool_definitions": "5f260c2a4a9a",
+          "escalation_and_human_review": "1d4da6c3ceb8"
+        }
+      },
+      "capability:api": {
+        "digest": "74886c9d769c",
+        "label": "Capability: api",
+        "summary": "17 setting(s), 6 forced by a control, 8 Merlin opinion(s)",
+        "parts": {
+          "runtime_identity": "36a827d79642",
+          "default_service_account": "8dd1dc59439a",
+          "ingress": "3d365c50392e",
+          "egress": "113abdbec0ab",
+          "region": "e4aa13dde0fe",
+          "request_logging": "2df5b06a2463",
+          "target": "f46ac0c16117",
+          "image": "e677ec5de243",
+          "min_instances": "d91a3759a7f9",
+          "max_instances": "31f70195ab6d",
+          "cpu": "0e55fa6f4205",
+          "timeout_seconds": "d05fe8abe7b8",
+          "concurrency": "d3596e916a9b",
+          "image_verification": "cc1313e890c3",
+          "application_code": "aa663bc5dac9",
+          "routes_and_handlers": "8d0ccb7e5d67",
+          "runtime_configuration": "1805137751a4"
+        }
+      },
+      "capability:batch-processing": {
+        "digest": "de378f459406",
+        "label": "Capability: batch-processing",
+        "summary": "10 setting(s), 4 forced by a control, 3 Merlin opinion(s)",
+        "parts": {
+          "worker_identity": "ada0b69dd4d6",
+          "public_addresses": "c5ad89a3d0ab",
+          "customer_key": "9db90629d1a1",
+          "region": "e4aa13dde0fe",
+          "template": "476a7a2a5dc3",
+          "max_workers": "e3acb08620f4",
+          "machine_type": "150dac6f8431",
+          "pipeline_code": "3922b9f5cfb8",
+          "transforms_and_parsing": "2dc55daf4bdf",
+          "schema_mapping": "9ee29982a04f"
+        }
+      },
+      "capability:cache": {
+        "digest": "baf7489e45b5",
+        "label": "Capability: cache",
+        "summary": "10 setting(s), 5 forced by a control, 3 Merlin opinion(s)",
+        "parts": {
+          "public_endpoint": "bde8d446e190",
+          "encrypted_transport": "bfe1036ea260",
+          "auth_required": "5d4caae197c2",
+          "customer_key": "7484c14eecc0",
+          "region": "e4aa13dde0fe",
+          "high_availability": "be083c089e99",
+          "size_gb": "5f81761b068a",
+          "version": "7edb0f1586cf",
+          "eviction_policy": "57bacb552bbd",
+          "cached_contents": "27165a3a5825"
+        }
+      },
+      "capability:cdn": {
+        "digest": "054d0d284a5f",
+        "label": "Capability: cdn",
+        "summary": "10 setting(s), 3 forced by a control, 4 Merlin opinion(s)",
+        "parts": {
+          "cache_mode": "86d1075a1aae",
+          "transport_security": "4d2248ff9f6d",
+          "edge_protection": "82515ae6ff3e",
+          "access_logging": "5f626d0e2409",
+          "default_ttl_seconds": "c8660775720a",
+          "negative_caching": "36c8a28d3f8a",
+          "domain": "8e01d2baf039",
+          "signed_urls": "9da11f9f1ac0",
+          "cache_key_policy": "5b5189f48c8d",
+          "content_invalidation": "be7528150342"
+        }
+      },
+      "capability:devices": {
+        "digest": "c21e47969de0",
+        "label": "Capability: devices",
+        "summary": "11 setting(s), 4 forced by a control, 3 Merlin opinion(s)",
+        "parts": {
+          "credential": "67291aa2410a",
+          "transport": "75ed13f5a572",
+          "fleet_identity": "ed92b1df4807",
+          "transport_security": "862971a0c673",
+          "shared_credentials": "ac398544a509",
+          "access_logging": "fb1a96a91077",
+          "public_addresses": "cc58f87fd349",
+          "certificate_authority": "a0a32915162f",
+          "device_enrolment": "67e87a458059",
+          "certificate_revocation": "8ab8e636dc14",
+          "firmware_and_payload_schema": "615a13fc88de"
+        }
+      },
+      "capability:document-ai": {
+        "digest": "ceb95cb678d5",
+        "label": "Capability: document-ai",
+        "summary": "10 setting(s), 5 forced by a control, 2 Merlin opinion(s)",
+        "parts": {
+          "worker_identity": "f393ea642650",
+          "image": "a671e5e4c1dc",
+          "processor_type": "255b2e8f516f",
+          "location": "9451eaed02db",
+          "covers": "1d6c250edc0e",
+          "customer_key": "8ce40b17c1a8",
+          "public_endpoint": "ca0e034bc153",
+          "document_schema": "0aab5104579a",
+          "confidence_thresholds": "d5927b48cc9a",
+          "human_review_path": "42ee18eb5508"
+        }
+      },
+      "capability:documents": {
+        "digest": "5007baabfa83",
+        "label": "Capability: documents",
+        "summary": "8 setting(s), 3 forced by a control, 2 Merlin opinion(s)",
+        "parts": {
+          "customer_key": "ae6334505229",
+          "region": "e4aa13dde0fe",
+          "point_in_time_recovery": "04f410f87b8f",
+          "deletion_protection": "424a15418404",
+          "mode": "ec314e6f4c1e",
+          "collections_and_documents": "e6e0cf158a5e",
+          "security_rules": "d960d0308cc1",
+          "indexes": "5ea765d90ecb"
+        }
+      },
+      "capability:embeddings": {
+        "digest": "2378fb8658e2",
+        "label": "Capability: embeddings",
+        "summary": "9 setting(s), 4 forced by a control, 2 Merlin opinion(s)",
+        "parts": {
+          "worker_identity": "3b42f4ababd1",
+          "region": "e4aa13dde0fe",
+          "ingress": "68bd9f59da3d",
+          "public_addresses": "2c1de350a0fb",
+          "image": "12402abc71f4",
+          "cpu": "2f2483e0c577",
+          "chunking_strategy": "2e6078b84d85",
+          "embedding_model_choice": "144dcfa32988",
+          "reindex_policy": "bbcc27a572ed"
+        }
+      },
+      "capability:events": {
+        "digest": "fc6933b3ad37",
+        "label": "Capability: events",
+        "summary": "5 setting(s), 2 forced by a control, 1 Merlin opinion(s)",
+        "parts": {
+          "customer_key": "d2b40eb35e5e",
+          "region": "5beb5791bfc1",
+          "retention": "55b1e8ccb350",
+          "message_schema": "8e1949eea8f4",
+          "message_contents": "709b4c66a475"
+        }
+      },
+      "capability:global-relational": {
+        "digest": "2bda1a0e38c4",
+        "label": "Capability: global-relational",
+        "summary": "13 setting(s), 6 forced by a control, 5 Merlin opinion(s)",
+        "parts": {
+          "public_endpoint": "82d3c493131e",
+          "customer_key": "d7cd124e995a",
+          "region": "6cde0d648aa8",
+          "deletion_protection": "424a15418404",
+          "drop_protection": "0b13823a26f4",
+          "point_in_time_recovery": "04f410f87b8f",
+          "audit_logging": "578ac6feee9f",
+          "replicates_to": "9a5b27f7093e",
+          "scope": "167148a5978f",
+          "size": "c5bf211d75c9",
+          "database_names": "4d34923e3ab2",
+          "schema_and_migrations": "a9f4981ac08a",
+          "interleaving_and_keys": "9f0e566d75f7"
+        }
+      },
+      "capability:internet": {
+        "digest": "a249d94b9730",
+        "label": "Capability: internet",
+        "summary": "8 setting(s), 4 forced by a control, 1 Merlin opinion(s)",
+        "parts": {
+          "transport_security": "f1b13bae3351",
+          "edge_protection": "b1dffdef6bd3",
+          "access_logging": "5f626d0e2409",
+          "region_scope": "00684901da37",
+          "domain": "e50fbbc83ad6",
+          "dns_records": "d89eccbed1a5",
+          "certificate_ownership": "fc8a4d670c80",
+          "firewall_rule_content": "7d3ae9ace239"
+        }
+      },
+      "capability:job": {
+        "digest": "1c5fa9d16604",
+        "label": "Capability: job",
+        "summary": "11 setting(s), 5 forced by a control, 4 Merlin opinion(s)",
+        "parts": {
+          "runtime_identity": "d3369af671b2",
+          "default_service_account": "d18d993e0755",
+          "egress": "13d0af886d54",
+          "region": "e4aa13dde0fe",
+          "execution_logging": "c8753ebe7c96",
+          "image": "e677ec5de243",
+          "max_retries": "b192c748e7b6",
+          "timeout_minutes": "1cc02d3c5937",
+          "cpu": "4821c9bdeb74",
+          "job_code": "3a8a364e41da",
+          "runtime_configuration": "1805137751a4"
+        }
+      },
+      "capability:llm": {
+        "digest": "26269712618a",
+        "label": "Capability: llm",
+        "summary": "10 setting(s), 4 forced by a control, 3 Merlin opinion(s)",
+        "parts": {
+          "sensitive_data_screening": "6b5473a2de1b",
+          "prompt_injection_screening": "3d5628092a7d",
+          "content_filters": "226ddbbcbadf",
+          "region": "734e55e5d284",
+          "prompt_logging": "06cd123f3751",
+          "log_retention_days": "6d01c3cf89d6",
+          "public_endpoint": "7df1a24ee20a",
+          "model_choice": "14db0ffb0957",
+          "prompt_content": "72599fa19845",
+          "evaluation_and_grounding": "6d65a4cdcd28"
+        }
+      },
+      "capability:objects": {
+        "digest": "aa2fd77093e8",
+        "label": "Capability: objects",
+        "summary": "10 setting(s), 5 forced by a control, 3 Merlin opinion(s)",
+        "parts": {
+          "public_endpoint": "3a9b5869916c",
+          "uniform_access": "72e2dec678f9",
+          "customer_key": "04f70ccf09f6",
+          "region": "e4aa13dde0fe",
+          "versioning": "b073f5b00f56",
+          "force_destroy": "ebbc91cbdb69",
+          "storage_class": "f24d17ffa516",
+          "retention_days": "c06218a4b4af",
+          "object_layout": "428aa59133f8",
+          "file_contents": "50b98385a51b"
+        }
+      },
+      "capability:onprem": {
+        "digest": "bd9710143b35",
+        "label": "Capability: onprem",
+        "summary": "9 setting(s), 3 forced by a control, 1 Merlin opinion(s)",
+        "parts": {
+          "transport_security": "99c3d8b21399",
+          "access_logging": "5f626d0e2409",
+          "region_scope": "00684901da37",
+          "allowed_sources": "a07ed0e4a257",
+          "domain": "c70f8966838d",
+          "public_addresses": "828a6f897c5e",
+          "dns_records": "d89eccbed1a5",
+          "certificate_ownership": "fc8a4d670c80",
+          "firewall_rule_content": "7d3ae9ace239"
+        }
+      },
+      "capability:partner": {
+        "digest": "740cbed6ffa1",
+        "label": "Capability: partner",
+        "summary": "9 setting(s), 3 forced by a control, 3 Merlin opinion(s)",
+        "parts": {
+          "exposure": "8da07c3c8cf0",
+          "transport_security": "076c2ec28619",
+          "access_logging": "427c5ac66b39",
+          "consumers": "ead996bd8b90",
+          "region_scope": "00684901da37",
+          "public_addresses": "406785c77ee0",
+          "partner_onboarding": "9669b694f634",
+          "quota_policy": "784d09183d91",
+          "credential_rotation": "7b316a058490"
+        }
+      },
+      "capability:prediction": {
+        "digest": "1888b718b66d",
+        "label": "Capability: prediction",
+        "summary": "8 setting(s), 4 forced by a control, 1 Merlin opinion(s)",
+        "parts": {
+          "customer_key": "a74d4e7559c0",
+          "region": "e4aa13dde0fe",
+          "public_endpoint": "f2de5d7a6ff8",
+          "request_logging": "bfab3c9ca37a",
+          "log_sample_rate": "721b5eaa0734",
+          "model_artifact": "aa757294ee6d",
+          "feature_engineering": "f6b0fc3fde31",
+          "drift_monitoring": "c47045cd0f76"
+        }
+      },
+      "capability:relational": {
+        "digest": "4f24b8bb89ef",
+        "label": "Capability: relational",
+        "summary": "14 setting(s), 6 forced by a control, 6 Merlin opinion(s)",
+        "parts": {
+          "public_endpoint": "53f4af398ae5",
+          "customer_key": "3be18c9d5aac",
+          "encrypted_transport": "fc424eeca3fd",
+          "region": "0933b9e8bf70",
+          "high_availability": "0f511c8c9f8d",
+          "point_in_time_recovery": "04f410f87b8f",
+          "deletion_protection": "424a15418404",
+          "audit_logging": "578ac6feee9f",
+          "engine": "679cf1e3f418",
+          "size": "71dfd46c9fd4",
+          "database_names": "4d34923e3ab2",
+          "read_replica": "3770bf4b477a",
+          "schema_and_migrations": "a9f4981ac08a",
+          "extra_users_and_engine_flags": "26e1466ecbaf"
+        }
+      },
+      "capability:replicate": {
+        "digest": "51381a0b1d15",
+        "label": "Capability: replicate",
+        "summary": "9 setting(s), 4 forced by a control, 2 Merlin opinion(s)",
+        "parts": {
+          "connectivity": "6bc9e1b112a4",
+          "source_kind": "3610d879181f",
+          "worker_identity": "2052b8d0824d",
+          "customer_key": "05c71199106a",
+          "region": "e4aa13dde0fe",
+          "mode": "0b02e4677b15",
+          "source_credentials": "736b70078bca",
+          "table_selection": "6be21cbb4a1d",
+          "schema_drift_handling": "452d3ee6ec81"
+        }
+      },
+      "capability:schedule": {
+        "digest": "8892671f9ca9",
+        "label": "Capability: schedule",
+        "summary": "5 setting(s), 2 forced by a control, 3 Merlin opinion(s)",
+        "parts": {
+          "caller_identity": "9a15ea7ffc5e",
+          "region": "e4aa13dde0fe",
+          "cron": "a42b43a0a434",
+          "timezone": "4b042a0d91d4",
+          "retry_count": "fe692b6ad6c4"
+        }
+      },
+      "capability:served-model": {
+        "digest": "cf992c639b56",
+        "label": "Capability: served-model",
+        "summary": "13 setting(s), 4 forced by a control, 5 Merlin opinion(s)",
+        "parts": {
+          "worker_identity": "8d42fc89edf1",
+          "accelerator": "4b6cddb22617",
+          "min_instances": "d5fbb3eaf0d9",
+          "max_instances": "bfbe581fe4e9",
+          "image_verification": "4145cc20e146",
+          "ingress": "74b13f7b1b86",
+          "public_addresses": "e341f26fc06e",
+          "region": "e4aa13dde0fe",
+          "image": "a59e2946a52b",
+          "model_weights": "15b92a828ee8",
+          "model_licence": "785fb0437461",
+          "serving_parameters": "aee6042f8e41",
+          "evaluation_and_safety": "bb81901e9ff5"
+        }
+      },
+      "capability:services": {
+        "digest": "4ff45543f6ff",
+        "label": "Capability: services",
+        "summary": "16 setting(s), 6 forced by a control, 7 Merlin opinion(s)",
+        "parts": {
+          "runtime_identity": "36a827d79642",
+          "default_service_account": "8dd1dc59439a",
+          "ingress": "3d365c50392e",
+          "egress": "113abdbec0ab",
+          "region": "e4aa13dde0fe",
+          "request_logging": "2df5b06a2463",
+          "members": "e22146765ef1",
+          "target": "0843d41a6e20",
+          "regions": "77e050e04875",
+          "image": "e677ec5de243",
+          "min_instances": "f690b2d3b680",
+          "max_instances": "103dc5ad16c9",
+          "cpu": "4821c9bdeb74",
+          "application_code": "aa663bc5dac9",
+          "routes_and_handlers": "8d0ccb7e5d67",
+          "runtime_configuration": "1805137751a4"
+        }
+      },
+      "capability:stream-processing": {
+        "digest": "46f864996229",
+        "label": "Capability: stream-processing",
+        "summary": "10 setting(s), 4 forced by a control, 3 Merlin opinion(s)",
+        "parts": {
+          "worker_identity": "ada0b69dd4d6",
+          "public_addresses": "c5ad89a3d0ab",
+          "customer_key": "2a2fbd32eb6e",
+          "region": "e4aa13dde0fe",
+          "template": "e7461ad87c37",
+          "max_workers": "510682c5ac89",
+          "machine_type": "150dac6f8431",
+          "pipeline_code": "3922b9f5cfb8",
+          "transforms_and_windowing": "d60c332268aa",
+          "schema_mapping": "9ee29982a04f"
+        }
+      },
+      "capability:timeseries": {
+        "digest": "4b65d0819506",
+        "label": "Capability: timeseries",
+        "summary": "9 setting(s), 4 forced by a control, 2 Merlin opinion(s)",
+        "parts": {
+          "customer_key": "9481b9200942",
+          "region": "e4aa13dde0fe",
+          "public_endpoint": "63e8c529c2fb",
+          "retention_days": "9cb1798f2b61",
+          "nodes": "70afb934901e",
+          "deletion_protection": "d5fb62db9582",
+          "row_key_design": "f7bd00511114",
+          "column_families": "89bcc9ec4a68",
+          "read_patterns": "24512b4ab264"
+        }
+      },
+      "capability:transfer": {
+        "digest": "c1a54cb4aae2",
+        "label": "Capability: transfer",
+        "summary": "8 setting(s), 3 forced by a control, 2 Merlin opinion(s)",
+        "parts": {
+          "connectivity": "fac09b896aba",
+          "schedule": "e2962de742b0",
+          "delete_from_source": "d20232d19bde",
+          "worker_identity": "0d5a1e9bbbc3",
+          "region": "e4aa13dde0fe",
+          "agent_deployment": "a583d4b95907",
+          "source_paths": "97bc3954778c",
+          "file_naming": "cb2586a0a5ce"
+        }
+      },
+      "capability:tuning": {
+        "digest": "aa259373fad3",
+        "label": "Capability: tuning",
+        "summary": "10 setting(s), 5 forced by a control, 2 Merlin opinion(s)",
+        "parts": {
+          "worker_identity": "82b9dddb35a7",
+          "customer_key": "3dbb503b8259",
+          "region": "e4aa13dde0fe",
+          "ingress": "9ce9325f0e0e",
+          "public_addresses": "0e9f6a7de3ba",
+          "experiment_tracking": "1d1c5905ccf4",
+          "image": "294cd37a3df8",
+          "base_model_and_hyperparameters": "ad1125d5db18",
+          "training_and_validation_split": "c20fda8a218d",
+          "acceptance_criteria": "6adb8d550d8a"
+        }
+      },
+      "capability:vectors": {
+        "digest": "8c13496b5030",
+        "label": "Capability: vectors",
+        "summary": "9 setting(s), 3 forced by a control, 3 Merlin opinion(s)",
+        "parts": {
+          "customer_key": "b60e33bec2f5",
+          "region": "e4aa13dde0fe",
+          "public_endpoint": "a7084a06bf4f",
+          "distance_measure": "3116a610a9dc",
+          "dimensions": "94038eb71297",
+          "machine_count": "26e44b42f4b7",
+          "corpus_and_chunking": "db3ca5f709c6",
+          "embedding_model_choice": "144dcfa32988",
+          "retrieval_evaluation": "01e1814bcd83"
+        }
+      },
+      "capability:vm-tier": {
+        "digest": "84f7c59d65d5",
+        "label": "Capability: vm-tier",
+        "summary": "19 setting(s), 9 forced by a control, 7 Merlin opinion(s)",
+        "parts": {
+          "runtime_identity": "d00cba2fb90e",
+          "public_address": "354fc6928282",
+          "shielded": "7c6753bfd71a",
+          "os_login": "c4744d36ce3e",
+          "customer_key": "a61c3dabebd6",
+          "region": "e4aa13dde0fe",
+          "ingress": "983eb7a76d3b",
+          "egress": "cbe1821e3e95",
+          "serial_port": "f22fb3c1351a",
+          "auto_healing": "ecc48f03bd79",
+          "image": "84ca24df7582",
+          "machine_type": "895725a0c9be",
+          "min_instances": "fed95a10d5be",
+          "max_instances": "1c7f4160a49c",
+          "boot_disk_gb": "37a0012cbc3b",
+          "health_check_path": "ec4e56ce092f",
+          "application_code": "aa663bc5dac9",
+          "image_build": "ad757f723e49",
+          "startup_configuration": "8d7df6d345e5"
+        }
+      },
+      "capability:warehouse": {
+        "digest": "481d9bb0f78e",
+        "label": "Capability: warehouse",
+        "summary": "6 setting(s), 2 forced by a control, 2 Merlin opinion(s)",
+        "parts": {
+          "customer_key": "7efe58baedf3",
+          "region": "e4aa13dde0fe",
+          "delete_contents_on_destroy": "1dbaea1b50cf",
+          "table_expiry_days": "cdda8063116b",
+          "schema_and_tables": "5eae81e8c75b",
+          "views_and_queries": "617e15d37cea"
+        }
+      },
+      "capability:worker": {
+        "digest": "6468566e1deb",
+        "label": "Capability: worker",
+        "summary": "14 setting(s), 6 forced by a control, 5 Merlin opinion(s)",
+        "parts": {
+          "runtime_identity": "36a827d79642",
+          "default_service_account": "8dd1dc59439a",
+          "reachable": "5980d051da73",
+          "egress": "113abdbec0ab",
+          "region": "e4aa13dde0fe",
+          "execution_logging": "c8753ebe7c96",
+          "target": "c68cbabd5f22",
+          "image": "e677ec5de243",
+          "min_instances": "f690b2d3b680",
+          "max_instances": "103dc5ad16c9",
+          "cpu": "4821c9bdeb74",
+          "application_code": "aa663bc5dac9",
+          "queue_handling": "ef54e58f8292",
+          "runtime_configuration": "1805137751a4"
+        }
+      },
+      "edge:agent-runtime -> api": {
+        "digest": "68973874eb6b",
+        "label": "Edge: agent-runtime -> api",
+        "summary": "1 role(s) on the allowlist, 2 refusal case(s)",
+        "parts": {
+          "grants": "72095df6e828",
+          "refusals": "1b9d58637137",
+          "path": "4152d6688081"
+        }
+      },
+      "edge:agent-runtime -> documents": {
+        "digest": "66a974a1c1b9",
+        "label": "Edge: agent-runtime -> documents",
+        "summary": "1 role(s) on the allowlist, 2 refusal case(s)",
+        "parts": {
+          "grants": "9c50be700508",
+          "refusals": "4fbcd4caaa09",
+          "path": "f4c875760f9c"
+        }
+      },
+      "edge:agent-runtime -> events": {
+        "digest": "92c00b749e95",
+        "label": "Edge: agent-runtime -> events",
+        "summary": "1 role(s) on the allowlist, 2 refusal case(s)",
+        "parts": {
+          "grants": "3e4689badcd8",
+          "refusals": "5659e052c913",
+          "path": "c1a3d08d04f4"
+        }
+      },
+      "edge:agent-runtime -> llm": {
+        "digest": "e023e9830d00",
+        "label": "Edge: agent-runtime -> llm",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "a9d16ad9e127",
+          "refusals": "97f3762bcc5f",
+          "path": "8e989710bc20"
+        }
+      },
+      "edge:api -> documents": {
+        "digest": "154f08db47c5",
+        "label": "Edge: api -> documents",
+        "summary": "1 role(s) on the allowlist, 2 refusal case(s)",
+        "parts": {
+          "grants": "9c50be700508",
+          "refusals": "ac7f9a72e102",
+          "path": "82416e93d022"
+        }
+      },
+      "edge:api -> events": {
+        "digest": "4adfcd140c2c",
+        "label": "Edge: api -> events",
+        "summary": "1 role(s) on the allowlist, 2 refusal case(s)",
+        "parts": {
+          "grants": "3e4689badcd8",
+          "refusals": "6d939a3c0128",
+          "path": "b07d75f8bc93"
+        }
+      },
+      "edge:api -> llm": {
+        "digest": "8c6ede4372e3",
+        "label": "Edge: api -> llm",
+        "summary": "1 role(s) on the allowlist, 4 refusal case(s)",
+        "parts": {
+          "grants": "a9d16ad9e127",
+          "refusals": "14a32132b5f8",
+          "path": "2dca216b1f59"
+        }
+      },
+      "edge:api -> prediction": {
+        "digest": "ece86f558d24",
+        "label": "Edge: api -> prediction",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "a9d16ad9e127",
+          "refusals": "dd4ed130dbca",
+          "path": "cab3e94d5b18"
+        }
+      },
+      "edge:api -> relational": {
+        "digest": "a0d62600f3b2",
+        "label": "Edge: api -> relational",
+        "summary": "3 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "0a436f60b63d",
+          "refusals": "bacdc19f9fa3",
+          "path": "e874ac1170b4"
+        }
+      },
+      "edge:api -> served-model": {
+        "digest": "44a2831ebdb1",
+        "label": "Edge: api -> served-model",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "72095df6e828",
+          "refusals": "4ef0e74f89a0",
+          "path": "76216998c7d7"
+        }
+      },
+      "edge:api -> timeseries": {
+        "digest": "5df883486349",
+        "label": "Edge: api -> timeseries",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "a56ecc77d849",
+          "refusals": "47438828f7af",
+          "path": "071f1c816329"
+        }
+      },
+      "edge:api -> vectors": {
+        "digest": "4d088677c725",
+        "label": "Edge: api -> vectors",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "a9d16ad9e127",
+          "refusals": "955aa000137f",
+          "path": "3e6cb652e309"
+        }
+      },
+      "edge:api -> warehouse": {
+        "digest": "c295cbb94afd",
+        "label": "Edge: api -> warehouse",
+        "summary": "2 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "09d0ef33bf67",
+          "refusals": "f1460b668e27",
+          "path": "465d9b5954f4"
+        }
+      },
+      "edge:batch-processing -> warehouse": {
+        "digest": "d1f1c70705e1",
+        "label": "Edge: batch-processing -> warehouse",
+        "summary": "2 role(s) on the allowlist, 2 refusal case(s)",
+        "parts": {
+          "grants": "72b76ca4f28a",
+          "refusals": "6571246b2c02",
+          "path": "6a7a8af8372e"
+        }
+      },
+      "edge:devices -> events": {
+        "digest": "d090deb6d1af",
+        "label": "Edge: devices -> events",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "3e4689badcd8",
+          "refusals": "4e832ba8962e",
+          "path": "fbe2172b8f48"
+        }
+      },
+      "edge:document-ai -> llm": {
+        "digest": "12c8905d3d34",
+        "label": "Edge: document-ai -> llm",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "a9d16ad9e127",
+          "refusals": "ea200612dc6a",
+          "path": "3c1dcd1fb6f4"
+        }
+      },
+      "edge:document-ai -> warehouse": {
+        "digest": "e8353e274deb",
+        "label": "Edge: document-ai -> warehouse",
+        "summary": "2 role(s) on the allowlist, 2 refusal case(s)",
+        "parts": {
+          "grants": "72b76ca4f28a",
+          "refusals": "e8dbaabc6a74",
+          "path": "6a7a8af8372e"
+        }
+      },
+      "edge:embeddings -> vectors": {
+        "digest": "bcf1e1b8f4b8",
+        "label": "Edge: embeddings -> vectors",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "a9d16ad9e127",
+          "refusals": "7d87304e4699",
+          "path": "cd25e1526c5a"
+        }
+      },
+      "edge:events -> embeddings": {
+        "digest": "3d9a24782c2d",
+        "label": "Edge: events -> embeddings",
+        "summary": "2 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "875cf54ddc46",
+          "refusals": "ff18b7c57e37",
+          "path": "9dfc643ce647"
+        }
+      },
+      "edge:events -> stream-processing": {
+        "digest": "a894403d5fba",
+        "label": "Edge: events -> stream-processing",
+        "summary": "4 role(s) on the allowlist, 2 refusal case(s)",
+        "parts": {
+          "grants": "f8ec071c25f5",
+          "refusals": "e71bb7920266",
+          "path": "fba95744c3cb"
+        }
+      },
+      "edge:events -> worker": {
+        "digest": "a5284498b0a1",
+        "label": "Edge: events -> worker",
+        "summary": "2 role(s) on the allowlist, 2 refusal case(s)",
+        "parts": {
+          "grants": "875cf54ddc46",
+          "refusals": "28d641282c52",
+          "path": "5b99439067c4"
+        }
+      },
+      "edge:internet -> agent-runtime": {
+        "digest": "8ebc3b9c0a87",
+        "label": "Edge: internet -> agent-runtime",
+        "summary": "0 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "95c38a2fcacd",
+          "refusals": "dff2a5108b5d",
+          "path": "a8502f3d5091"
+        }
+      },
+      "edge:internet -> api": {
+        "digest": "7cebe62768db",
+        "label": "Edge: internet -> api",
+        "summary": "0 role(s) on the allowlist, 4 refusal case(s)",
+        "parts": {
+          "grants": "95c38a2fcacd",
+          "refusals": "7dee8143089b",
+          "path": "ae06734ceaa4"
+        }
+      },
+      "edge:internet -> services": {
+        "digest": "7cebe62768db",
+        "label": "Edge: internet -> services",
+        "summary": "0 role(s) on the allowlist, 4 refusal case(s)",
+        "parts": {
+          "grants": "95c38a2fcacd",
+          "refusals": "7dee8143089b",
+          "path": "ae06734ceaa4"
+        }
+      },
+      "edge:internet -> vm-tier": {
+        "digest": "a9bbfc73ed6c",
+        "label": "Edge: internet -> vm-tier",
+        "summary": "0 role(s) on the allowlist, 4 refusal case(s)",
+        "parts": {
+          "grants": "95c38a2fcacd",
+          "refusals": "7875fdec9510",
+          "path": "ae9cba6fe950"
+        }
+      },
+      "edge:job -> llm": {
+        "digest": "8c6ede4372e3",
+        "label": "Edge: job -> llm",
+        "summary": "1 role(s) on the allowlist, 4 refusal case(s)",
+        "parts": {
+          "grants": "a9d16ad9e127",
+          "refusals": "14a32132b5f8",
+          "path": "2dca216b1f59"
+        }
+      },
+      "edge:job -> prediction": {
+        "digest": "993640298670",
+        "label": "Edge: job -> prediction",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "a9d16ad9e127",
+          "refusals": "e26ce5d321e2",
+          "path": "79c2ab647efe"
+        }
+      },
+      "edge:job -> relational": {
+        "digest": "a0d62600f3b2",
+        "label": "Edge: job -> relational",
+        "summary": "3 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "0a436f60b63d",
+          "refusals": "bacdc19f9fa3",
+          "path": "e874ac1170b4"
+        }
+      },
+      "edge:job -> warehouse": {
+        "digest": "6f710e2fed8a",
+        "label": "Edge: job -> warehouse",
+        "summary": "2 role(s) on the allowlist, 2 refusal case(s)",
+        "parts": {
+          "grants": "72b76ca4f28a",
+          "refusals": "6d78c0b8c26e",
+          "path": "6a7a8af8372e"
+        }
+      },
+      "edge:objects -> batch-processing": {
+        "digest": "1e74b074cdf9",
+        "label": "Edge: objects -> batch-processing",
+        "summary": "3 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "a93011438025",
+          "refusals": "24c73837403c",
+          "path": "0fe004697ae1"
+        }
+      },
+      "edge:objects -> cdn": {
+        "digest": "a189bd207720",
+        "label": "Edge: objects -> cdn",
+        "summary": "0 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "95c38a2fcacd",
+          "refusals": "2c32d91a466c",
+          "path": "1d2fbe399d11"
+        }
+      },
+      "edge:objects -> document-ai": {
+        "digest": "1b246c86da41",
+        "label": "Edge: objects -> document-ai",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "7e37e43a9978",
+          "refusals": "55473dc6d69d",
+          "path": "8f84ed673ca9"
+        }
+      },
+      "edge:objects -> embeddings": {
+        "digest": "41b3ff4ab790",
+        "label": "Edge: objects -> embeddings",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "7e37e43a9978",
+          "refusals": "55933ed0f815",
+          "path": "caedbb93982d"
+        }
+      },
+      "edge:objects -> served-model": {
+        "digest": "b892d63d7150",
+        "label": "Edge: objects -> served-model",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "7e37e43a9978",
+          "refusals": "9cbdce2f4131",
+          "path": "87e5251d1d86"
+        }
+      },
+      "edge:objects -> tuning": {
+        "digest": "cef5fb310758",
+        "label": "Edge: objects -> tuning",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "7e37e43a9978",
+          "refusals": "4ed05557c34f",
+          "path": "551660a5773b"
+        }
+      },
+      "edge:onprem -> api": {
+        "digest": "2cb8285125b7",
+        "label": "Edge: onprem -> api",
+        "summary": "0 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "95c38a2fcacd",
+          "refusals": "daa09347ba57",
+          "path": "52363c00d7ca"
+        }
+      },
+      "edge:onprem -> replicate": {
+        "digest": "df86f9448c58",
+        "label": "Edge: onprem -> replicate",
+        "summary": "0 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "95c38a2fcacd",
+          "refusals": "2fb337772204",
+          "path": "c6978488c01b"
+        }
+      },
+      "edge:onprem -> transfer": {
+        "digest": "2eba7d894e00",
+        "label": "Edge: onprem -> transfer",
+        "summary": "0 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "95c38a2fcacd",
+          "refusals": "98dcbd6db9b6",
+          "path": "2c42c38b27e7"
+        }
+      },
+      "edge:onprem -> vm-tier": {
+        "digest": "5c24afb6d50e",
+        "label": "Edge: onprem -> vm-tier",
+        "summary": "0 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "95c38a2fcacd",
+          "refusals": "82a7302e4fa0",
+          "path": "6c8c07797b4a"
+        }
+      },
+      "edge:partner -> api": {
+        "digest": "b430beb036ac",
+        "label": "Edge: partner -> api",
+        "summary": "0 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "95c38a2fcacd",
+          "refusals": "4948cce87080",
+          "path": "7b5a5bdcac53"
+        }
+      },
+      "edge:replicate -> relational": {
+        "digest": "61adc7b47856",
+        "label": "Edge: replicate -> relational",
+        "summary": "1 role(s) on the allowlist, 4 refusal case(s)",
+        "parts": {
+          "grants": "1884aa941cdb",
+          "refusals": "e59c6d9c73f1",
+          "path": "16ebaec04529"
+        }
+      },
+      "edge:schedule -> job": {
+        "digest": "f5f6f718562e",
+        "label": "Edge: schedule -> job",
+        "summary": "1 role(s) on the allowlist, 2 refusal case(s)",
+        "parts": {
+          "grants": "72095df6e828",
+          "refusals": "08bef364d1a9",
+          "path": "f16d1252c9bd"
+        }
+      },
+      "edge:services -> cache": {
+        "digest": "6dd393dae231",
+        "label": "Edge: services -> cache",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "44dcb4b28642",
+          "refusals": "279d0b16f366",
+          "path": "670987a55fab"
+        }
+      },
+      "edge:services -> events": {
+        "digest": "4adfcd140c2c",
+        "label": "Edge: services -> events",
+        "summary": "1 role(s) on the allowlist, 2 refusal case(s)",
+        "parts": {
+          "grants": "3e4689badcd8",
+          "refusals": "6d939a3c0128",
+          "path": "b07d75f8bc93"
+        }
+      },
+      "edge:services -> global-relational": {
+        "digest": "c4f1f01928f5",
+        "label": "Edge: services -> global-relational",
+        "summary": "1 role(s) on the allowlist, 5 refusal case(s)",
+        "parts": {
+          "grants": "4d3bf64aed06",
+          "refusals": "4294d46187df",
+          "path": "7e20d1376c9a"
+        }
+      },
+      "edge:services -> relational": {
+        "digest": "a0d62600f3b2",
+        "label": "Edge: services -> relational",
+        "summary": "3 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "0a436f60b63d",
+          "refusals": "bacdc19f9fa3",
+          "path": "e874ac1170b4"
+        }
+      },
+      "edge:stream-processing -> timeseries": {
+        "digest": "b1b30ecdf769",
+        "label": "Edge: stream-processing -> timeseries",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "83bff010fa86",
+          "refusals": "cd567989477d",
+          "path": "4d5926f0623b"
+        }
+      },
+      "edge:stream-processing -> warehouse": {
+        "digest": "d1f1c70705e1",
+        "label": "Edge: stream-processing -> warehouse",
+        "summary": "2 role(s) on the allowlist, 2 refusal case(s)",
+        "parts": {
+          "grants": "72b76ca4f28a",
+          "refusals": "6571246b2c02",
+          "path": "6a7a8af8372e"
+        }
+      },
+      "edge:transfer -> objects": {
+        "digest": "a1c9f4b36bb8",
+        "label": "Edge: transfer -> objects",
+        "summary": "2 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "f6b401a91e31",
+          "refusals": "53a08687fb6a",
+          "path": "9e607f2e7c69"
+        }
+      },
+      "edge:tuning -> prediction": {
+        "digest": "585a4d1ab14d",
+        "label": "Edge: tuning -> prediction",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "a9d16ad9e127",
+          "refusals": "fe1b0aa1da34",
+          "path": "6176512a16b2"
+        }
+      },
+      "edge:vm-tier -> cache": {
+        "digest": "6dd393dae231",
+        "label": "Edge: vm-tier -> cache",
+        "summary": "1 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "44dcb4b28642",
+          "refusals": "279d0b16f366",
+          "path": "670987a55fab"
+        }
+      },
+      "edge:vm-tier -> relational": {
+        "digest": "f2c8896e118d",
+        "label": "Edge: vm-tier -> relational",
+        "summary": "3 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "0a436f60b63d",
+          "refusals": "23db4fffedcc",
+          "path": "2c23c9abf9a7"
+        }
+      },
+      "edge:worker -> objects": {
+        "digest": "8861c4e96fd8",
+        "label": "Edge: worker -> objects",
+        "summary": "2 role(s) on the allowlist, 3 refusal case(s)",
+        "parts": {
+          "grants": "f6b401a91e31",
+          "refusals": "ad9c57bd80b2",
+          "path": "6a7a8af8372e"
+        }
+      },
+      "edge:worker -> warehouse": {
+        "digest": "6f710e2fed8a",
+        "label": "Edge: worker -> warehouse",
+        "summary": "2 role(s) on the allowlist, 2 refusal case(s)",
+        "parts": {
+          "grants": "72b76ca4f28a",
+          "refusals": "6d78c0b8c26e",
+          "path": "6a7a8af8372e"
+        }
+      },
+      "archetype:A1": {
+        "digest": "681887ff6c65",
+        "label": "Archetype A1: Internet API, document store",
+        "summary": "3 node(s), 2 edge(s), public",
+        "parts": {
+          "graph": "9ef85f3ad3b5",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:A2": {
+        "digest": "b17d317a39f2",
+        "label": "Archetype A2: Internet API, relational store",
+        "summary": "3 node(s), 2 edge(s), public",
+        "parts": {
+          "graph": "922fe0adf451",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:A3": {
+        "digest": "424679446ec4",
+        "label": "Archetype A3: API with event analytics",
+        "summary": "6 node(s), 5 edge(s), public",
+        "parts": {
+          "graph": "fc89f0f9ffb7",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:A4": {
+        "digest": "bb04904f1971",
+        "label": "Archetype A4: Scheduled batch to warehouse",
+        "summary": "4 node(s), 3 edge(s), public",
+        "parts": {
+          "graph": "d91cd914710a",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:A5": {
+        "digest": "24a32a962ee0",
+        "label": "Archetype A5: File-driven batch pipeline",
+        "summary": "3 node(s), 2 edge(s), public",
+        "parts": {
+          "graph": "af06f99608c2",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:AI1": {
+        "digest": "733dc73cc72b",
+        "label": "Archetype AI1: Managed model behind an API",
+        "summary": "7 node(s), 6 edge(s), public",
+        "parts": {
+          "graph": "b68a21b1f7a7",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:AI2": {
+        "digest": "a77250639e4e",
+        "label": "Archetype AI2: Retrieval-augmented generation",
+        "summary": "7 node(s), 6 edge(s), public",
+        "parts": {
+          "graph": "3b84dfb8a1aa",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:AI3": {
+        "digest": "d48e2b5fabbc",
+        "label": "Archetype AI3: Agent with tools",
+        "summary": "8 node(s), 7 edge(s), public",
+        "parts": {
+          "graph": "491e0e7d6391",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:AI4": {
+        "digest": "9c8f83b14cb7",
+        "label": "Archetype AI4: Self-hosted open-weight model",
+        "summary": "4 node(s), 3 edge(s), public",
+        "parts": {
+          "graph": "404904773165",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:AI5": {
+        "digest": "3a69b0f0955b",
+        "label": "Archetype AI5: Batch inference and enrichment",
+        "summary": "4 node(s), 3 edge(s), public",
+        "parts": {
+          "graph": "901b19381848",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:AI6": {
+        "digest": "34bcd584aaae",
+        "label": "Archetype AI6: Document extraction pipeline",
+        "summary": "6 node(s), 5 edge(s), public",
+        "parts": {
+          "graph": "e6bd8438ab46",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:AI7": {
+        "digest": "7c43d5119e63",
+        "label": "Archetype AI7: Tuning and evaluation",
+        "summary": "6 node(s), 5 edge(s), public",
+        "parts": {
+          "graph": "2e4a91aa18a2",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:AI8": {
+        "digest": "30df442be2f1",
+        "label": "Archetype AI8: Classic prediction behind an API",
+        "summary": "4 node(s), 3 edge(s), public",
+        "parts": {
+          "graph": "931c7da26b38",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:D1": {
+        "digest": "34785f932f17",
+        "label": "Archetype D1: Device telemetry ingestion",
+        "summary": "7 node(s), 6 edge(s), public",
+        "parts": {
+          "graph": "ea0203213f66",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:D2": {
+        "digest": "6a1a1c8cd463",
+        "label": "Archetype D2: Streaming media delivery with analytics",
+        "summary": "7 node(s), 5 edge(s), public",
+        "parts": {
+          "graph": "379dc54559a1",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:D3": {
+        "digest": "6115475512e3",
+        "label": "Archetype D3: Data platform, landing to serving",
+        "summary": "7 node(s), 6 edge(s), public",
+        "parts": {
+          "graph": "f51cf1830caa",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:H1": {
+        "digest": "1adf37e92455",
+        "label": "Archetype H1: Internal API reached from on-premises",
+        "summary": "4 node(s), 3 edge(s), public",
+        "parts": {
+          "graph": "72eff7713d4d",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:H2": {
+        "digest": "f6dc1e697d36",
+        "label": "Archetype H2: Partner-facing API",
+        "summary": "4 node(s), 3 edge(s), public",
+        "parts": {
+          "graph": "79af763dae44",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:H3": {
+        "digest": "fde760213e9c",
+        "label": "Archetype H3: Database replication to the cloud",
+        "summary": "6 node(s), 5 edge(s), public",
+        "parts": {
+          "graph": "6abcae4afd87",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:H4": {
+        "digest": "4d4fdac007b1",
+        "label": "Archetype H4: File landing from on-premises",
+        "summary": "5 node(s), 4 edge(s), public",
+        "parts": {
+          "graph": "703634ac63bb",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:K1": {
+        "digest": "32d377e70c25",
+        "label": "Archetype K1: Microservices on the shared cluster",
+        "summary": "5 node(s), 4 edge(s), public",
+        "parts": {
+          "graph": "d1f6a5a42865",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:K2": {
+        "digest": "88c86f46c9a6",
+        "label": "Archetype K2: Multi-region services on the shared fleet",
+        "summary": "6 node(s), 5 edge(s), public",
+        "parts": {
+          "graph": "9435539bda1b",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:K3": {
+        "digest": "3c9d0625b92d",
+        "label": "Archetype K3: Event-driven workers on the shared cluster",
+        "summary": "4 node(s), 3 edge(s), public",
+        "parts": {
+          "graph": "1b6248286183",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:V1": {
+        "digest": "6876f1b9be2f",
+        "label": "Archetype V1: Three-tier VM web application",
+        "summary": "4 node(s), 3 edge(s), public",
+        "parts": {
+          "graph": "13a3e6995d4f",
+          "status": "b78532572a08"
+        }
+      },
+      "archetype:V2": {
+        "digest": "1f5723b11dd7",
+        "label": "Archetype V2: Internal VM application from on-premises",
+        "summary": "3 node(s), 2 edge(s), public",
+        "parts": {
+          "graph": "28125ceea8bc",
+          "status": "b78532572a08"
+        }
+      }
+    }
+  },
+  "inventory": {
+    "gke_workloads": [
+      {
+        "environments": [
+          "dev",
+          "stg",
+          "prd"
+        ],
+        "cluster": "gke-prod",
+        "node_pool_profile": "standard-general",
+        "source": "derived",
+        "id": "gke-gke-prod",
+        "region": "europe-west4",
+        "workload_identity": true,
+        "node_pools": [
+          "gke-prod-pool"
+        ],
+        "namespaces": [
+          "apps"
+        ]
+      }
+    ],
+    "bigquery_datasets": [
+      {
+        "environments": [
+          "dev",
+          "stg",
+          "prd"
+        ],
+        "cmek": true,
+        "id": "bq-analytics",
+        "source": "user",
+        "default_table_expiration_days": null,
+        "department": "",
+        "location": "europe-west4",
+        "name": "analytics"
+      }
+    ],
+    "gcs_buckets": [
+      {
+        "storage_class": "STANDARD",
+        "environments": [
+          "dev",
+          "stg",
+          "prd"
+        ],
+        "cmek": true,
+        "versioning": true,
+        "id": "gcs-data",
+        "source": "user",
+        "retention_days": null,
+        "department": "",
+        "location": "europe-west4",
+        "name": "data"
+      }
+    ],
+    "cloud_sql_instances": [
+      {
+        "tier": "db-custom-2-7680",
+        "environments": [
+          "dev",
+          "stg",
+          "prd"
+        ],
+        "cmek": true,
+        "vpc_network": "vpc-shared-prod",
+        "id": "sql-app-db",
+        "source": "user",
+        "backup_enabled": true,
+        "department": "",
+        "database_version": "POSTGRES_15",
+        "availability_type": "REGIONAL",
+        "name": "app-db"
+      }
+    ],
+    "firestore_databases": [],
+    "pubsub_topics": [
+      {
+        "environments": [
+          "dev",
+          "stg",
+          "prd"
+        ],
+        "cmek": true,
+        "id": "ps-events",
+        "source": "user",
+        "subscriptions": [
+          "events-sub"
+        ],
+        "department": "",
+        "message_retention": "604800s",
+        "name": "events"
+      }
+    ],
+    "secret_manager_secrets": [],
+    "dataflow_scaffolds": [
+      {
+        "environments": [
+          "dev",
+          "stg",
+          "prd"
+        ],
+        "cmek": true,
+        "private_ips_only": true,
+        "source": "user",
+        "scratch_retention_days": 7,
+        "id": "df-dataflow",
+        "department": "",
+        "region": "europe-west4",
+        "name": "dataflow"
+      }
+    ],
+    "cloud_run_services": [
+      {
+        "environments": [
+          "dev",
+          "stg",
+          "prd"
+        ],
+        "image": "us-docker.pkg.dev/cloudrun/container/hello",
+        "cmek": true,
+        "id": "run-api",
+        "source": "user",
+        "min_instances": 1,
+        "department": "",
+        "region": "europe-west4",
+        "ingress": "internal-and-cloud-load-balancing",
+        "vpc_egress": "private-ranges-only",
+        "max_instances": 50,
+        "name": "api"
+      }
+    ],
+    "cloud_functions": [],
+    "compute_instances": [],
+    "bastion_hosts": [],
+    "artifact_registry_repos": [
+      {
+        "format": "DOCKER",
+        "cmek": true,
+        "id": "ar-containers",
+        "source": "wizard",
+        "cleanup_keep_count": 10,
+        "location": "europe-west4",
+        "project": "prj-seed-cicd",
+        "name": "containers"
+      }
+    ],
+    "applications": [
+      {
+        "id": "checkout",
+        "name": "checkout",
+        "archetype": "A3",
+        "environments": [
+          "dev",
+          "prd",
+          "stg"
+        ],
+        "resources": [
+          {
+            "id": "checkout-api-dev",
+            "kind": "cloud_run_services",
+            "name": "checkout-api-dev",
+            "environment": "dev",
+            "project": "shop-app-dev-0",
+            "loses_data": false
+          },
+          {
+            "id": "checkout-events-dev",
+            "kind": "pubsub_topics",
+            "name": "checkout-events-dev",
+            "environment": "dev",
+            "project": "shop-dp-dev-0",
+            "loses_data": true
+          },
+          {
+            "id": "checkout-internet-dev",
+            "kind": "front_doors",
+            "name": "checkout-internet-dev",
+            "environment": "dev",
+            "project": "shop-app-dev-0",
+            "loses_data": false
+          },
+          {
+            "id": "checkout-pipeline-dev",
+            "kind": "gcs_buckets",
+            "name": "checkout-pipeline-dev",
+            "environment": "dev",
+            "project": "shop-dp-dev-0",
+            "loses_data": true
+          },
+          {
+            "id": "checkout-relational-dev",
+            "kind": "cloud_sql_instances",
+            "name": "checkout-relational-dev",
+            "environment": "dev",
+            "project": "shop-dp-dev-0",
+            "loses_data": true
+          },
+          {
+            "id": "checkout-db-dev",
+            "kind": "secret_manager_secrets",
+            "name": "checkout-db-dev",
+            "environment": "dev",
+            "project": "shop-app-dev-0",
+            "loses_data": true
+          },
+          {
+            "id": "checkout-stream-processing-dev",
+            "kind": "dataflow_scaffolds",
+            "name": "checkout-stream-processing-dev",
+            "environment": "dev",
+            "project": "shop-dp-dev-0",
+            "loses_data": false
+          },
+          {
+            "id": "checkout-warehouse-dev",
+            "kind": "bigquery_datasets",
+            "name": "checkout-warehouse-dev",
+            "environment": "dev",
+            "project": "shop-dp-dev-0",
+            "loses_data": true
+          },
+          {
+            "id": "checkout-api-prd",
+            "kind": "cloud_run_services",
+            "name": "checkout-api-prd",
+            "environment": "prd",
+            "project": "shop-app-prd-0",
+            "loses_data": false
+          },
+          {
+            "id": "checkout-events-prd",
+            "kind": "pubsub_topics",
+            "name": "checkout-events-prd",
+            "environment": "prd",
+            "project": "shop-dp-prd-0",
+            "loses_data": true
+          },
+          {
+            "id": "checkout-internet-prd",
+            "kind": "front_doors",
+            "name": "checkout-internet-prd",
+            "environment": "prd",
+            "project": "shop-app-prd-0",
+            "loses_data": false
+          },
+          {
+            "id": "checkout-pipeline-prd",
+            "kind": "gcs_buckets",
+            "name": "checkout-pipeline-prd",
+            "environment": "prd",
+            "project": "shop-dp-prd-0",
+            "loses_data": true
+          },
+          {
+            "id": "checkout-relational-prd",
+            "kind": "cloud_sql_instances",
+            "name": "checkout-relational-prd",
+            "environment": "prd",
+            "project": "shop-dp-prd-0",
+            "loses_data": true
+          },
+          {
+            "id": "checkout-db-prd",
+            "kind": "secret_manager_secrets",
+            "name": "checkout-db-prd",
+            "environment": "prd",
+            "project": "shop-app-prd-0",
+            "loses_data": true
+          },
+          {
+            "id": "checkout-stream-processing-prd",
+            "kind": "dataflow_scaffolds",
+            "name": "checkout-stream-processing-prd",
+            "environment": "prd",
+            "project": "shop-dp-prd-0",
+            "loses_data": false
+          },
+          {
+            "id": "checkout-warehouse-prd",
+            "kind": "bigquery_datasets",
+            "name": "checkout-warehouse-prd",
+            "environment": "prd",
+            "project": "shop-dp-prd-0",
+            "loses_data": true
+          },
+          {
+            "id": "checkout-api-stg",
+            "kind": "cloud_run_services",
+            "name": "checkout-api-stg",
+            "environment": "stg",
+            "project": "shop-app-stg-0",
+            "loses_data": false
+          },
+          {
+            "id": "checkout-events-stg",
+            "kind": "pubsub_topics",
+            "name": "checkout-events-stg",
+            "environment": "stg",
+            "project": "shop-dp-stg-0",
+            "loses_data": true
+          },
+          {
+            "id": "checkout-internet-stg",
+            "kind": "front_doors",
+            "name": "checkout-internet-stg",
+            "environment": "stg",
+            "project": "shop-app-stg-0",
+            "loses_data": false
+          },
+          {
+            "id": "checkout-pipeline-stg",
+            "kind": "gcs_buckets",
+            "name": "checkout-pipeline-stg",
+            "environment": "stg",
+            "project": "shop-dp-stg-0",
+            "loses_data": true
+          },
+          {
+            "id": "checkout-relational-stg",
+            "kind": "cloud_sql_instances",
+            "name": "checkout-relational-stg",
+            "environment": "stg",
+            "project": "shop-dp-stg-0",
+            "loses_data": true
+          },
+          {
+            "id": "checkout-db-stg",
+            "kind": "secret_manager_secrets",
+            "name": "checkout-db-stg",
+            "environment": "stg",
+            "project": "shop-app-stg-0",
+            "loses_data": true
+          },
+          {
+            "id": "checkout-stream-processing-stg",
+            "kind": "dataflow_scaffolds",
+            "name": "checkout-stream-processing-stg",
+            "environment": "stg",
+            "project": "shop-dp-stg-0",
+            "loses_data": false
+          },
+          {
+            "id": "checkout-warehouse-stg",
+            "kind": "bigquery_datasets",
+            "name": "checkout-warehouse-stg",
+            "environment": "stg",
+            "project": "shop-dp-stg-0",
+            "loses_data": true
+          }
+        ],
+        "identities": [
+          "checkout-api-dev",
+          "checkout-api-prd",
+          "checkout-api-stg",
+          "checkout-stream-processing-dev",
+          "checkout-stream-processing-prd",
+          "checkout-stream-processing-stg"
+        ],
+        "grants": 30
+      },
+      {
+        "id": "inventory-replica",
+        "name": "inventory-replica",
+        "archetype": "H3",
+        "environments": [
+          "prd"
+        ],
+        "resources": [
+          {
+            "id": "inventory-replica-job-prd",
+            "kind": "cloud_run_services",
+            "name": "inventory-replica-job-prd",
+            "environment": "prd",
+            "project": "seller-app-prd-0",
+            "loses_data": false
+          },
+          {
+            "id": "inventory-replica-onprem-prd",
+            "kind": "internal_front_doors",
+            "name": "inventory-replica-onprem-prd",
+            "environment": "prd",
+            "project": "",
+            "loses_data": false
+          },
+          {
+            "id": "inventory-replica-relational-prd",
+            "kind": "cloud_sql_instances",
+            "name": "inventory-replica-relational-prd",
+            "environment": "prd",
+            "project": "seller-dp-prd-0",
+            "loses_data": true
+          },
+          {
+            "id": "inventory-replica-replicate-prd",
+            "kind": "migration_jobs",
+            "name": "inventory-replica-replicate-prd",
+            "environment": "prd",
+            "project": "seller-dp-prd-0",
+            "loses_data": false
+          },
+          {
+            "id": "inventory-replica-schedule-prd",
+            "kind": "cloud_scheduler_jobs",
+            "name": "inventory-replica-schedule-prd",
+            "environment": "prd",
+            "project": "seller-app-prd-0",
+            "loses_data": false
+          },
+          {
+            "id": "inventory-replica-db-prd",
+            "kind": "secret_manager_secrets",
+            "name": "inventory-replica-db-prd",
+            "environment": "prd",
+            "project": "seller-app-prd-0",
+            "loses_data": true
+          },
+          {
+            "id": "inventory-replica-warehouse-prd",
+            "kind": "bigquery_datasets",
+            "name": "inventory-replica-warehouse-prd",
+            "environment": "prd",
+            "project": "seller-dp-prd-0",
+            "loses_data": true
+          }
+        ],
+        "identities": [
+          "inventory-replica-job-prd",
+          "inventory-replica-replicat-prd",
+          "inventory-replica-schedule-prd"
+        ],
+        "grants": 7
+      },
+      {
+        "id": "seller-assistant",
+        "name": "seller-assistant",
+        "archetype": "AI2",
+        "environments": [
+          "dev",
+          "prd",
+          "stg"
+        ],
+        "resources": [
+          {
+            "id": "seller-assistant-api-dev",
+            "kind": "cloud_run_services",
+            "name": "seller-assistant-api-dev",
+            "environment": "dev",
+            "project": "seller-app-dev-0",
+            "loses_data": false
+          },
+          {
+            "id": "seller-assistant-embeddings-dev",
+            "kind": "cloud_run_services",
+            "name": "seller-assistant-embeddings-dev",
+            "environment": "dev",
+            "project": "seller-app-dev-0",
+            "loses_data": false
+          },
+          {
+            "id": "seller-assistant-events-dev",
+            "kind": "pubsub_topics",
+            "name": "seller-assistant-events-dev",
+            "environment": "dev",
+            "project": "seller-dp-dev-0",
+            "loses_data": true
+          },
+          {
+            "id": "seller-assistant-internet-dev",
+            "kind": "front_doors",
+            "name": "seller-assistant-internet-dev",
+            "environment": "dev",
+            "project": "seller-app-dev-0",
+            "loses_data": false
+          },
+          {
+            "id": "seller-assistant-llm-dev",
+            "kind": "model_guardrails",
+            "name": "seller-assistant-llm-dev",
+            "environment": "dev",
+            "project": "seller-app-dev-0",
+            "loses_data": false
+          },
+          {
+            "id": "seller-assistant-objects-dev",
+            "kind": "gcs_buckets",
+            "name": "seller-assistant-objects-dev",
+            "environment": "dev",
+            "project": "seller-dp-dev-0",
+            "loses_data": true
+          },
+          {
+            "id": "seller-assistant-vectors-dev",
+            "kind": "vector_indexes",
+            "name": "seller-assistant-vectors-dev",
+            "environment": "dev",
+            "project": "seller-dp-dev-0",
+            "loses_data": true
+          },
+          {
+            "id": "seller-assistant-api-prd",
+            "kind": "cloud_run_services",
+            "name": "seller-assistant-api-prd",
+            "environment": "prd",
+            "project": "seller-app-prd-0",
+            "loses_data": false
+          },
+          {
+            "id": "seller-assistant-embeddings-prd",
+            "kind": "cloud_run_services",
+            "name": "seller-assistant-embeddings-prd",
+            "environment": "prd",
+            "project": "seller-app-prd-0",
+            "loses_data": false
+          },
+          {
+            "id": "seller-assistant-events-prd",
+            "kind": "pubsub_topics",
+            "name": "seller-assistant-events-prd",
+            "environment": "prd",
+            "project": "seller-dp-prd-0",
+            "loses_data": true
+          },
+          {
+            "id": "seller-assistant-internet-prd",
+            "kind": "front_doors",
+            "name": "seller-assistant-internet-prd",
+            "environment": "prd",
+            "project": "seller-app-prd-0",
+            "loses_data": false
+          },
+          {
+            "id": "seller-assistant-llm-prd",
+            "kind": "model_guardrails",
+            "name": "seller-assistant-llm-prd",
+            "environment": "prd",
+            "project": "seller-app-prd-0",
+            "loses_data": false
+          },
+          {
+            "id": "seller-assistant-objects-prd",
+            "kind": "gcs_buckets",
+            "name": "seller-assistant-objects-prd",
+            "environment": "prd",
+            "project": "seller-dp-prd-0",
+            "loses_data": true
+          },
+          {
+            "id": "seller-assistant-vectors-prd",
+            "kind": "vector_indexes",
+            "name": "seller-assistant-vectors-prd",
+            "environment": "prd",
+            "project": "seller-dp-prd-0",
+            "loses_data": true
+          },
+          {
+            "id": "seller-assistant-api-stg",
+            "kind": "cloud_run_services",
+            "name": "seller-assistant-api-stg",
+            "environment": "stg",
+            "project": "seller-app-stg-0",
+            "loses_data": false
+          },
+          {
+            "id": "seller-assistant-embeddings-stg",
+            "kind": "cloud_run_services",
+            "name": "seller-assistant-embeddings-stg",
+            "environment": "stg",
+            "project": "seller-app-stg-0",
+            "loses_data": false
+          },
+          {
+            "id": "seller-assistant-events-stg",
+            "kind": "pubsub_topics",
+            "name": "seller-assistant-events-stg",
+            "environment": "stg",
+            "project": "seller-dp-stg-0",
+            "loses_data": true
+          },
+          {
+            "id": "seller-assistant-internet-stg",
+            "kind": "front_doors",
+            "name": "seller-assistant-internet-stg",
+            "environment": "stg",
+            "project": "seller-app-stg-0",
+            "loses_data": false
+          },
+          {
+            "id": "seller-assistant-llm-stg",
+            "kind": "model_guardrails",
+            "name": "seller-assistant-llm-stg",
+            "environment": "stg",
+            "project": "seller-app-stg-0",
+            "loses_data": false
+          },
+          {
+            "id": "seller-assistant-objects-stg",
+            "kind": "gcs_buckets",
+            "name": "seller-assistant-objects-stg",
+            "environment": "stg",
+            "project": "seller-dp-stg-0",
+            "loses_data": true
+          },
+          {
+            "id": "seller-assistant-vectors-stg",
+            "kind": "vector_indexes",
+            "name": "seller-assistant-vectors-stg",
+            "environment": "stg",
+            "project": "seller-dp-stg-0",
+            "loses_data": true
+          }
+        ],
+        "identities": [
+          "seller-assistant-api-dev",
+          "seller-assistant-api-prd",
+          "seller-assistant-api-stg",
+          "seller-assistant-embedding-dev",
+          "seller-assistant-embedding-prd",
+          "seller-assistant-embedding-stg"
+        ],
+        "grants": 18
+      },
+      {
+        "id": "storefront",
+        "name": "storefront",
+        "archetype": "K1",
+        "environments": [
+          "dev",
+          "prd",
+          "stg"
+        ],
+        "resources": [
+          {
+            "id": "storefront-cache-dev",
+            "kind": "memorystore_instances",
+            "name": "storefront-cache-dev",
+            "environment": "dev",
+            "project": "shop-dp-dev-0",
+            "loses_data": true
+          },
+          {
+            "id": "storefront-events-dev",
+            "kind": "pubsub_topics",
+            "name": "storefront-events-dev",
+            "environment": "dev",
+            "project": "shop-dp-dev-0",
+            "loses_data": true
+          },
+          {
+            "id": "storefront-internet-dev",
+            "kind": "front_doors",
+            "name": "storefront-internet-dev",
+            "environment": "dev",
+            "project": "shop-app-dev-0",
+            "loses_data": false
+          },
+          {
+            "id": "storefront-relational-dev",
+            "kind": "cloud_sql_instances",
+            "name": "storefront-relational-dev",
+            "environment": "dev",
+            "project": "shop-dp-dev-0",
+            "loses_data": true
+          },
+          {
+            "id": "storefront-db-dev",
+            "kind": "secret_manager_secrets",
+            "name": "storefront-db-dev",
+            "environment": "dev",
+            "project": "shop-app-dev-0",
+            "loses_data": true
+          },
+          {
+            "id": "storefront-services-dev",
+            "kind": "gke_workloads",
+            "name": "storefront-services-dev",
+            "environment": "dev",
+            "project": "shop-app-dev-0",
+            "loses_data": false
+          },
+          {
+            "id": "storefront-cache-prd",
+            "kind": "memorystore_instances",
+            "name": "storefront-cache-prd",
+            "environment": "prd",
+            "project": "shop-dp-prd-0",
+            "loses_data": true
+          },
+          {
+            "id": "storefront-events-prd",
+            "kind": "pubsub_topics",
+            "name": "storefront-events-prd",
+            "environment": "prd",
+            "project": "shop-dp-prd-0",
+            "loses_data": true
+          },
+          {
+            "id": "storefront-internet-prd",
+            "kind": "front_doors",
+            "name": "storefront-internet-prd",
+            "environment": "prd",
+            "project": "shop-app-prd-0",
+            "loses_data": false
+          },
+          {
+            "id": "storefront-relational-prd",
+            "kind": "cloud_sql_instances",
+            "name": "storefront-relational-prd",
+            "environment": "prd",
+            "project": "shop-dp-prd-0",
+            "loses_data": true
+          },
+          {
+            "id": "storefront-db-prd",
+            "kind": "secret_manager_secrets",
+            "name": "storefront-db-prd",
+            "environment": "prd",
+            "project": "shop-app-prd-0",
+            "loses_data": true
+          },
+          {
+            "id": "storefront-services-prd",
+            "kind": "gke_workloads",
+            "name": "storefront-services-prd",
+            "environment": "prd",
+            "project": "shop-app-prd-0",
+            "loses_data": false
+          },
+          {
+            "id": "storefront-cache-stg",
+            "kind": "memorystore_instances",
+            "name": "storefront-cache-stg",
+            "environment": "stg",
+            "project": "shop-dp-stg-0",
+            "loses_data": true
+          },
+          {
+            "id": "storefront-events-stg",
+            "kind": "pubsub_topics",
+            "name": "storefront-events-stg",
+            "environment": "stg",
+            "project": "shop-dp-stg-0",
+            "loses_data": true
+          },
+          {
+            "id": "storefront-internet-stg",
+            "kind": "front_doors",
+            "name": "storefront-internet-stg",
+            "environment": "stg",
+            "project": "shop-app-stg-0",
+            "loses_data": false
+          },
+          {
+            "id": "storefront-relational-stg",
+            "kind": "cloud_sql_instances",
+            "name": "storefront-relational-stg",
+            "environment": "stg",
+            "project": "shop-dp-stg-0",
+            "loses_data": true
+          },
+          {
+            "id": "storefront-db-stg",
+            "kind": "secret_manager_secrets",
+            "name": "storefront-db-stg",
+            "environment": "stg",
+            "project": "shop-app-stg-0",
+            "loses_data": true
+          },
+          {
+            "id": "storefront-services-stg",
+            "kind": "gke_workloads",
+            "name": "storefront-services-stg",
+            "environment": "stg",
+            "project": "shop-app-stg-0",
+            "loses_data": false
+          }
+        ],
+        "identities": [
+          "storefront-services-dev",
+          "storefront-services-prd",
+          "storefront-services-stg"
+        ],
+        "grants": 15
+      }
+    ]
+  }
+}
