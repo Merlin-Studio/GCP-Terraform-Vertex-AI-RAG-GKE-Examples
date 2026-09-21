@@ -12,15 +12,25 @@ database that publishes events" — and the identities, the grants, the network
 paths, the encryption keys and the projects follow from the arrows in it and from
 the foundation it lands on. Nobody is asked for a service account.
 
-- [Before you start](#before-you-start)
-- [1. The front door](#1-the-front-door)
-- [2. Departments](#2-departments-optional)
-- [3. A plan](#3-a-plan)
-- [4. Applications](#4-applications)
-- [5. The platform pages](#5-the-platform-pages)
-- [6. Review and generate](#6-review-and-generate)
-- [What you get](#what-you-get)
-- [Supported architectures](#supported-architectures)
+- [How the applications in this repository were defined in Merlin](#how-the-applications-in-this-repository-were-defined-in-merlin)
+  - [Before you start](#before-you-start)
+  - [1. The front door](#1-the-front-door)
+  - [2. Departments (optional)](#2-departments-optional)
+  - [3. A plan](#3-a-plan)
+  - [4. Applications](#4-applications)
+    - [Choose an architecture](#choose-an-architecture)
+    - [Name it, place it, add it](#name-it-place-it-add-it)
+    - [The application's card](#the-applications-card)
+  - [5. The platform pages](#5-the-platform-pages)
+  - [6. Review and generate](#6-review-and-generate)
+  - [What you get](#what-you-get)
+  - [Supported architectures](#supported-architectures)
+    - [Serverless](#serverless)
+    - [AI](#ai)
+    - [Data and devices](#data-and-devices)
+    - [Hybrid](#hybrid)
+    - [Kubernetes](#kubernetes)
+    - [Virtual machines](#virtual-machines)
 
 ## Before you start
 
@@ -73,7 +83,7 @@ file in the bundle. Add the team's groups and a budget, **Save**, then
 
 ![The confirm table, filled in from the foundation](screenshots/03-department-confirm-table.png)
 
-![Both departments generated](screenshots/04-departments-generated.png)
+
 
 ## 3. A plan
 
@@ -90,7 +100,7 @@ The Applications page works in three steps, printed at the top of it:
 
 1. choose an architecture, or one of your blueprints;
 2. name the application and choose its environments;
-3. add it, repeat for each application, then continue.
+3. add it, repcreenshots/04-departments-generated.png)eat for each application, then continue.
 
 ![The Applications page](screenshots/06-applications-page.png)
 
