@@ -216,6 +216,9 @@ This repository is the output of one wizard session, not a hand-crafted repo.
 signup, no email, guest mode starts immediately. Pick your own regions,
 departments and applications and compare what comes out against this example.
 
+**[How the applications here were defined](DEFINING-APPLICATIONS.md)** walks
+through the pages screen by screen, and lists all 25 supported architectures.
+
 ### Further reading
 
 - [Compile-Time AI for GCP Landing Zones](https://medium.com/google-cloud/compile-time-ai-for-gcp-landing-zones-2555560fbd2f) — how the approach works: language models at design time, deterministic generation at run time. Same answers, same bytes.
