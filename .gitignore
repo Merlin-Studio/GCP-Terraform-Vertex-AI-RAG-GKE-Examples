@@ -1,0 +1,4 @@
+# scripts/validate.sh assembles a Fabric checkout and a provider cache here.
+.validate/
+.terraform/
+*.tfstate*

@@ -1,0 +1,39 @@
+name: terraform validate
+
+# Every Terraform root in this repository is validated against the Cloud
+# Foundation Fabric release it was generated for. No credentials and no Google
+# Cloud project: `terraform init -backend=false` and `terraform validate`.
+#
+# It runs the same script the README tells a reader to run, so the badge and
+# the quickstart cannot disagree.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: every root, against Fabric v58.0.0
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.14.3
+          terraform_wrapper: false
+
+      - name: Cache providers
+        uses: actions/cache@v4
+        with:
+          path: .validate/plugin-cache
+          key: tf-providers-${{ hashFiles('**/versions.tf') }}
+
+      - name: Validate
+        run: bash scripts/validate.sh
