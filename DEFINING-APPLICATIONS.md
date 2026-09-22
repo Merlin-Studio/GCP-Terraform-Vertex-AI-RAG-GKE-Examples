@@ -75,10 +75,7 @@ repository has two: `shop` and `seller`.
 The department opens on its **confirm table**: the facts its Terraform is built
 against. Every line arrives filled in from the foundation — the project prefix,
 the region, the key project, and for each environment the network, the host
-project and a free subnet range. Merlin never asks for your billing account,
-which is confidential, or for folder numbers, which do not exist until the
-foundation is applied; both arrive as placeholders, and the real values go in one
-file in the bundle. Add the team's groups and a budget, **Save**, then
+project and a free subnet range. Billing account is not an obligatory field. If you prefer not to provide it for confidentiality reasons, Merlin will generate a placeholder (a fake account). Merlin also uses placeholders for folder numbers, which do not exist until the foundation is applied. Both values appear as placeholders, and the real ones are placed together in a single file within the bundle. Add the team's groups and a budget, **Save**, then
 **Generate**.
 
 ![The confirm table, filled in from the foundation](screenshots/03-department-confirm-table.png)
@@ -110,7 +107,6 @@ Each card is one architecture: a name, its flow written as arrows, and two
 sentences on what it is. Tabs narrow the list by family — Serverless, AI, Data
 and devices, Hybrid, Kubernetes, Virtual machines. The whole card is the button.
 
-![The architecture chooser](screenshots/07-architecture-chooser.png)
 
 ### Name it, place it, add it
 
@@ -156,13 +152,11 @@ implies, counted in its heading and listed before anything is generated. This is
 list that becomes Terraform, and the reason for each grant is the arrow that
 needs it.
 
-![What the architecture derives](screenshots/11-card-what-this-derives.png)
 
 A card you are happy with can be kept with **Save as blueprint**: the
 architecture and its answers, reusable by name. The next application of the same
 shape then needs a name and its environments and nothing else.
 
-![Four applications on the plan](screenshots/12-applications-added.png)
 
 ## 5. The platform pages
 
@@ -185,7 +179,6 @@ The last page says what the plan creates, per environment, and what generating
 
 ![Review and generate](screenshots/15-plan-review.png)
 
-![The generated plan](screenshots/16-plan-generated.png)
 
 ## What you get
 
