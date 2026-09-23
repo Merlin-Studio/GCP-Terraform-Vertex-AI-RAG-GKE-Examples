@@ -16,6 +16,7 @@ the foundation it lands on. Nobody is asked for a service account.
   - [Before you start](#before-you-start)
   - [1. The front door](#1-the-front-door)
   - [2. Departments (optional)](#2-departments-optional)
+    - [If you define no departments](#if-you-define-no-departments)
   - [3. A plan](#3-a-plan)
   - [4. Applications](#4-applications)
     - [Choose an architecture](#choose-an-architecture)
@@ -63,8 +64,8 @@ A department is a business unit with its own team, its own projects and its own
 data: a developer of one department cannot reach another's data, even in dev.
 Merlin generates it as an *addition* to the foundation — new projects, a subnet
 per environment, a key ring, a budget, deploy identities — touching nothing the
-foundation owns. A one-team company can skip this; every application then shares
-each environment's projects.
+foundation owns. Defining them is optional, and the rest of this section says
+what follows from each answer.
 
 Give it a **code** (2 to 8 lowercase letters and digits — it becomes part of
 every project id), a **name**, and its **environments**, then **Create**. This
@@ -80,7 +81,32 @@ project and a free subnet range. Billing account is not an obligatory field. If 
 
 ![The confirm table, filled in from the foundation](screenshots/03-department-confirm-table.png)
 
+### If you define no departments
 
+**Nothing stops working.** Every application then lands in the
+environment's shared projects — `app-<env>-0` for its services, `dp-<env>-0`
+for its data, on that environment's shared subnet — which is where the cluster,
+the registry and the delivery pipelines live in any case. The Applications page
+prints those project names before you add anything, and the department dropdown
+reads *Shared projects (no department)*. It offers a link to create one; nothing
+requires it, and the bundle that comes out is complete either way.
+
+**What you give up is a boundary, not a feature.** With no department, every
+application in an environment shares one project pair, so a team's service
+accounts and its developers sit beside everyone else's data and isolation ends
+at the grants you can name rather than at the project. One deploy identity
+applies all of it — `iac-app-<env>` for every application stage, where a
+department's stages are applied by its own `iac-<code>-<env>` — and there is one
+key ring, one budget and one subnet to read a bill or an audit log against. For
+one team, that is the simpler thing and the right answer.
+
+**The choice is not permanent.** A department is an increment on the landing
+zone rather than a property of it: create one later and generate it, and the
+landing zone is not regenerated and what is already running is untouched. Point
+an existing application at it, generate the plan again, and `CHANGES.md` lists
+what moved. Do note that it is a real move — different projects, a different
+subnet, so the resources are recreated rather than relabelled — which costs
+nothing before the first apply and quite a lot after it.
 
 ## 3. A plan
 
@@ -97,7 +123,7 @@ The Applications page works in three steps, printed at the top of it:
 
 1. choose an architecture, or one of your blueprints;
 2. name the application and choose its environments;
-3. add it, repcreenshots/04-departments-generated.png)eat for each application, then continue.
+3. add it, repeat for each application, then continue.
 
 ![The Applications page](screenshots/06-applications-page.png)
 
