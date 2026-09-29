@@ -20,6 +20,9 @@ It is one fictional company's whole Google Cloud estate as Terraform: the cloud
 foundation, two departments, and four applications on top. **131 Terraform files
 among 342 generated ones, and none of them written by hand.**
 
+📖 **The walkthrough:** [Generating the Application Layer of a GCP Foundation: a four-workload example](https://medium.com/google-cloud/generating-the-application-layer-of-a-gcp-foundation-a-four-workload-example-41bfd90c6f01)
+— the article this repository accompanies, in *Google Cloud - Community* on Medium.
+
 ## The four examples
 
 | | What it is | Start here |
@@ -221,6 +224,7 @@ through the pages screen by screen, and lists all 25 supported architectures.
 
 ### Further reading
 
+- [Generating the Application Layer of a GCP Foundation: a four-workload example](https://medium.com/google-cloud/generating-the-application-layer-of-a-gcp-foundation-a-four-workload-example-41bfd90c6f01) — how this repository was produced, from the landing zone to the four applications, screen by screen.
 - [Compile-Time AI for GCP Landing Zones](https://medium.com/google-cloud/compile-time-ai-for-gcp-landing-zones-2555560fbd2f) — how the approach works: language models at design time, deterministic generation at run time. Same answers, same bytes.
 - Looking for the foundation alone? The [Merlin-Studio](https://github.com/Merlin-Studio) account has reference landing zones for regulated industries on both GCP and AWS.
 
