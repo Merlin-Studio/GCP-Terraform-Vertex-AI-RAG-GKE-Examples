@@ -35,6 +35,14 @@ among 342 generated ones, and none of them written by hand.**
 Each page says what is built, shows the Terraform that matters, and links to the
 stage for every environment.
 
+## Generate your own version
+
+Everything in this repository came out of Merlin, from one set of answers. To
+get the same estate for your own company — your organization, regions,
+compliance and departments — answer Merlin's questions, generate the landing
+zone, then choose the workloads you need from 25 archetypes, including the four
+above. Guest mode, no signup. **[Open Merlin →](https://app.merlin-studio.cloud)**
+
 ## Try it in a minute — no Google Cloud account needed
 
 ```bash
@@ -55,6 +63,8 @@ from a cold start, needing only `terraform` and `git`. **No credentials, nothing
 created, nothing to clean up.** Leave the argument off to validate all 32
 Terraform roots — the foundation's, both departments' and every application's —
 which is what the badge above runs on every push.
+
+Or skip the clone and generate your own: **[Open Merlin →](https://app.merlin-studio.cloud)**
 
 This is deliberately not a one-line `terraform apply`. A Vector Search endpoint,
 a highly-available Cloud SQL instance and a GKE cluster are not things to create
